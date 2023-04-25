@@ -17,12 +17,19 @@ if (patternLoginId.test(url)) {
     const formSubmit = document.getElementsByName("login")[0];
     if (!formUserName || !formUserPass || !formSubmit)
         errorLog("login-id-page-no-form");
-    const submit = function () {
-        if (formUserName.value && formUserPass.value)
-            formSubmit.submit();
-    };
-    formUserName.addEventListener("input", submit);
-    formUserPass.addEventListener("input", submit);
+    if (userData.studentId && userData.password) {
+        formUserName.value = userData.studentId;
+        formUserPass.value = userData.password;
+        formSubmit.submit();
+    }
+    else {
+        const submit = function () {
+            if (formUserName.value && formUserPass.value)
+                formSubmit.submit();
+        };
+        formUserName.addEventListener("input", submit);
+        formUserPass.addEventListener("input", submit);
+    }
 }
 if (patternLoginSelect.test(url)) {
     console.log("login-select-page");

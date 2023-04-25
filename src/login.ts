@@ -27,12 +27,21 @@ if (patternLoginId.test(url)) {
     const formSubmit = document.getElementsByName("login")[0] as HTMLFormElement;
     if (!formUserName || !formUserPass || !formSubmit)
         errorLog("login-id-page-no-form");
-    const submit = function () {
-        if (formUserName.value && formUserPass.value)
-            formSubmit.submit();
+
+    if (userData.studentId && userData.password) {
+        // if studentId and password is seted.
+        formUserName.value = userData.studentId;
+        formUserPass.value = userData.password;
+        formSubmit.submit();
+    } else {
+        // if studentId and password is not seted.
+        const submit = function () {
+            if (formUserName.value && formUserPass.value)
+                formSubmit.submit();
+        }
+        formUserName.addEventListener("input", submit);
+        formUserPass.addEventListener("input", submit);
     }
-    formUserName.addEventListener("input", submit);
-    formUserPass.addEventListener("input", submit);
 }
 
 // login-select-page

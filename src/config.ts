@@ -1,4 +1,6 @@
 const userData = {
+    studentId: "",
+    password: "",
     matrix:
         [
             ["", "", "", "", "", "", "", "", "", ""],
