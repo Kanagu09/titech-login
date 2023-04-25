@@ -27,9 +27,12 @@ if (patternLoginId.test(url)) {
     const formSubmit = document.getElementsByName("login")[0] as HTMLFormElement;
     if (!formUserName || !formUserPass || !formSubmit)
         errorLog("login-id-page-no-form");
-    formUserName.value = userData.studentId;
-    formUserPass.value = userData.password;
-    formSubmit.submit();
+    const submit = function () {
+        if (formUserName.value && formUserPass.value)
+            formSubmit.submit();
+    }
+    formUserName.addEventListener("input", submit);
+    formUserPass.addEventListener("input", submit);
 }
 
 // login-select-page
@@ -79,10 +82,10 @@ if (patternLoginMatrix.test(url)) {
 
 // error log
 function errorLog(errorCode: string): void {
-    alert("\
-        Login-error.\n\
-        Redirect to https://portal.nap.gsic.titech.ac.jp\n\n\
-        error-code: " + errorCode
+    alert(
+        "Login-error.\n" +
+        "Redirect to https://portal.nap.gsic.titech.ac.jp\n\n" +
+        "error-code: " + errorCode
     );
     location.href = "https://portal.nap.gsic.titech.ac.jp";
 }
