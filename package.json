@@ -1,0 +1,10 @@
+{
+  "name": "titech-login",
+  "version": "0.1.0",
+  "description": "Google Chrome extension that automatically signs you in to Tokyo Tech Portal.",
+  "author": "Kanagu09",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  }
+}
