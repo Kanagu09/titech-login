@@ -9,8 +9,8 @@
                 "https://portal.nap.gsic.titech.ac.jp/*"
             ],
             "js": [
-                "bin/config.js",
-                "bin/login.js"
+                "dist/config.js",
+                "dist/login.js"
             ]
         }
     ]

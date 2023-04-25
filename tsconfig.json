@@ -3,7 +3,7 @@
     "target": "es2016",
     "module": "commonjs",
     "rootDir": "./src/",
-    "outDir": "./bin/",
+    "outDir": "./dist/",
     "removeComments": true,
     "strict": true,
     "noImplicitAny": true,

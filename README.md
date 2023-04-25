@@ -6,7 +6,7 @@ Please use it at your own risk.
 ## usage
 
 1. Clone or download this repository.
-1. Fill in your own user information in `bin/login.js`.
+1. Fill in your own user information in `dist/login.js`.
 1. Launch Google Chrome.
 1. Access `chrome://extensions/`.
 1. Turn on Developer mode.
