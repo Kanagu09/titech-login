@@ -45,7 +45,7 @@ if (patternLoginMatrix.test(url)) {
     const formTable = document.getElementById("authentication");
     if (!formTable)
         errorLog("login-matrix-page-no-form");
-    for (let i = 3; i < 6; i++) {
+    for (let i = 4; i < 7; i++) {
         const formMatrixStr = formTable.rows[i].cells[0].innerHTML;
         if (!formMatrixStr)
             errorLog("login-matrix-page-no-form");
@@ -54,7 +54,7 @@ if (patternLoginMatrix.test(url)) {
         console.log(matrixRow, ",", matrixCell);
         if (matrixRow == -1 || isNaN(matrixCell))
             errorLog("login-matrix-page-illegal-index");
-        const formMatrix = document.getElementsByName("message" + i)[0];
+        const formMatrix = document.getElementsByName("message" + (i - 1))[0];
         if (!formMatrix)
             errorLog("login-matrix-page-no-form");
         formMatrix.value = userData.matrix[matrixCell][matrixRow];

@@ -64,7 +64,7 @@ if (patternLoginMatrix.test(url)) {
     if (!formTable)
         errorLog("login-matrix-page-no-form");
 
-    for (let i = 3; i < 6; i++) {
+    for (let i = 4; i < 7; i++) {
         const formMatrixStr = formTable.rows[i].cells[0].innerHTML;
         if (!formMatrixStr)
             errorLog("login-matrix-page-no-form");
@@ -77,7 +77,7 @@ if (patternLoginMatrix.test(url)) {
             errorLog("login-matrix-page-illegal-index");
 
         // fill matrix
-        const formMatrix = document.getElementsByName("message" + i)[0] as HTMLInputElement;
+        const formMatrix = document.getElementsByName("message" + (i - 1))[0] as HTMLInputElement;
         if (!formMatrix)
             errorLog("login-matrix-page-no-form");
         formMatrix.value = userData.matrix[matrixCell][matrixRow];
